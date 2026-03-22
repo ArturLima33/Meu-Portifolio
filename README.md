@@ -1,14 +1,14 @@
-# 🎮 Jogo da Forca - Portfólio
+# 🎮 Jogo da Forca - Portfólio:
 
 Projeto desenvolvido com Next.js como parte da disciplina.
 
-## 🚀 Funcionalidades
+## 🚀 Funcionalidades:
 - Jogo da forca com categorias de Ciência da Computação
 - Teclado interativo
 - Feedback visual (acerto e erro)
 - Sistema de reinício
 
-## 🧠 Categorias
+## 🧠 Categorias:
 - Estruturas de Dados
 - Algoritmos
 - Banco de Dados
@@ -17,12 +17,13 @@ Projeto desenvolvido com Next.js como parte da disciplina.
 - Programação
 - Tecnologias
 
-## 🛠️ Tecnologias
+## 🛠️ Tecnologias:
 - Next.js
 - React
 - CSS Modules
 
-## 🌐 Deploy
+## 🌐 Deploy:
 https://meu-portifolio-zeta-jade.vercel.app
 
-## 🎥 Vídeo
+## 🎥 Vídeo:
+https://youtu.be/k_nCcBGXWKw
