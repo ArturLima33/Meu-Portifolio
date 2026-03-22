@@ -1,0 +1,92 @@
+.container {
+  max-width: 600px;
+  margin: 80px auto 0 auto;
+  color: #eee;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.palavra {
+  font-size: 2rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 20px;
+}
+
+.caixinhaLetra {
+  font-size: 2rem;
+  margin: 20px auto;
+  background-color: #555;
+  width: 80px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.aviso {
+  color: #ffdd57;
+  font-weight: bold;
+}
+
+.vitoria {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.derrota {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.teclado {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  justify-content: center;
+  gap: 8px;
+}
+
+.botaoTeclado {
+  font-size: 1.2rem;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  color: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.botaoTeclado:hover {
+  background-color: #0d6efd;
+}
+
+.botaoEnter {
+  grid-column: span 3;
+  font-size: 1.2rem;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  color: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.acertou {
+  background-color: #4CAF50;
+}
+
+.errou {
+  background-color: #f44336;
+}
+
+.botao {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  border-radius: 12px;
+  border: none;
+  background-color: #1e90ff;
+  color: white;
+  cursor: pointer;
+}
