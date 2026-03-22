@@ -14,13 +14,6 @@
   word-break: break-all;
 }
 
-@media (max-width: 480px) {
-  .palavra {
-    font-size: 1.5rem;
-    letter-spacing: 0.2em;
-  }
-}
-
 .caixinhaLetra {
   font-size: 2rem;
   margin: 20px auto;
@@ -39,29 +32,24 @@
   margin: 10px 0;
 }
 
-.vitoria {
-  color: #4CAF50;
-  font-weight: bold;
-}
+.vitoria { color: #4CAF50; font-weight: bold; }
+.derrota { color: #f44336; font-weight: bold; }
 
-.derrota {
-  color: #f44336;
-  font-weight: bold;
-}
-
+/* --- TECLADO --- */
 .teclado {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
-  max-width: 500px; /* trava a largura para o PC manter as linhas */
+  gap: 8px;
+  width: 100%;
+  max-width: 520px; /* Mantém o formato no PC */
   margin-left: auto;
   margin-right: auto;
 }
 
 .botaoTeclado {
-  width: 40px; /* tamanho fixo para manter o alinhamento no PC */
+  width: 42px; /* Largura fixa para o PC */
   height: 45px;
   font-size: 1.1rem;
   display: flex;
@@ -74,22 +62,8 @@
   cursor: pointer;
 }
 
-/* No mobile, as teclas diminuem um pouco para caberem na largura da tela */
-@media (max-width: 400px) {
-  .botaoTeclado {
-    width: 32px;
-    height: 40px;
-    font-size: 0.9rem;
-  }
-}
-
-.botaoTeclado:hover {
-  background-color: #0d6efd;
-}
-
 .botaoEnter {
-  padding: 0 15px;
-  min-width: 80px;
+  width: 92px; /* Largura fixa para o PC */
   height: 45px;
   font-size: 0.9rem;
   background-color: transparent;
@@ -99,22 +73,36 @@
   cursor: pointer;
 }
 
-@media (max-width: 400px) {
-  .botaoEnter {
+/* --- AJUSTE ESPECÍFICO PARA CELULAR --- */
+@media (max-width: 500px) {
+  .teclado {
+    gap: 4px; /* Diminui o espaço entre teclas no celular */
+  }
+
+  .botaoTeclado {
+    /* No celular, elas deixam de ser fixas e ocupam uma porcentagem da tela */
+    width: calc(10% - 6px); 
+    min-width: 30px;
     height: 40px;
+    font-size: 0.9rem;
+    padding: 0;
+  }
+
+  .botaoEnter {
+    width: calc(20% - 6px); /* Enter ocupa o dobro de uma tecla normal */
     min-width: 60px;
+    height: 40px;
+    font-size: 0.7rem;
+  }
+
+  .palavra {
+    font-size: 1.5rem;
   }
 }
 
-.acertou {
-  background-color: #4CAF50 !important;
-  border-color: #4CAF50;
-}
-
-.errou {
-  background-color: #f44336 !important;
-  border-color: #f44336;
-}
+.botaoTeclado:hover { background-color: #0d6efd; }
+.acertou { background-color: #4CAF50 !important; border-color: #4CAF50; }
+.errou { background-color: #f44336 !important; border-color: #f44336; }
 
 .botao {
   margin-top: 20px;
