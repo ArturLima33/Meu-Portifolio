@@ -1,17 +1,15 @@
 .container {
   max-width: 600px;
-  margin: 40px auto;
+  margin: 80px auto 0 auto;
   color: #eee;
   text-align: center;
   font-family: Arial, sans-serif;
-  padding: 0 15px;
 }
 
 .palavra {
   font-size: 2rem;
   letter-spacing: 0.3em;
   margin-bottom: 20px;
-  word-break: break-all;
 }
 
 .caixinhaLetra {
@@ -29,43 +27,55 @@
 .aviso {
   color: #ffdd57;
   font-weight: bold;
-  margin: 10px 0;
 }
 
 .vitoria { color: #4CAF50; font-weight: bold; }
 .derrota { color: #f44336; font-weight: bold; }
 
-/* --- TECLADO --- */
 .teclado {
   margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
   justify-content: center;
   gap: 8px;
-  width: 100%;
-  max-width: 520px; /* Mantém o formato no PC */
-  margin-left: auto;
-  margin-right: auto;
+  /* Garante que o ponto de redução seja o topo central */
+  transform-origin: top center; 
+}
+
+/* --- A MÁGICA ESTÁ AQUI --- */
+@media (max-width: 600px) {
+  .teclado {
+    transform: scale(0.7); /* Diminui o teclado em 30% no celular */
+    margin-top: 0px;       /* Ajusta o espaço que sobra devido à escala */
+    width: 140%;           /* Compensa o encolhimento para não sair do centro */
+    margin-left: -20%;
+  }
+}
+
+@media (max-width: 400px) {
+  .teclado {
+    transform: scale(0.6); /* Diminui um pouco mais em celulares bem pequenos */
+  }
 }
 
 .botaoTeclado {
-  width: 42px; /* Largura fixa para o PC */
-  height: 45px;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.2rem;
+  padding: 10px;
   background-color: transparent;
   border: 2px solid #ccc;
   color: #eee;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.botaoTeclado:hover {
+  background-color: #0d6efd;
 }
 
 .botaoEnter {
-  width: 92px; /* Largura fixa para o PC */
-  height: 45px;
-  font-size: 0.9rem;
+  grid-column: span 3;
+  font-size: 1.2rem;
+  padding: 10px;
   background-color: transparent;
   border: 2px solid #ccc;
   color: #eee;
@@ -73,36 +83,8 @@
   cursor: pointer;
 }
 
-/* --- AJUSTE ESPECÍFICO PARA CELULAR --- */
-@media (max-width: 500px) {
-  .teclado {
-    gap: 4px; /* Diminui o espaço entre teclas no celular */
-  }
-
-  .botaoTeclado {
-    /* No celular, elas deixam de ser fixas e ocupam uma porcentagem da tela */
-    width: calc(10% - 6px); 
-    min-width: 30px;
-    height: 40px;
-    font-size: 0.9rem;
-    padding: 0;
-  }
-
-  .botaoEnter {
-    width: calc(20% - 6px); /* Enter ocupa o dobro de uma tecla normal */
-    min-width: 60px;
-    height: 40px;
-    font-size: 0.7rem;
-  }
-
-  .palavra {
-    font-size: 1.5rem;
-  }
-}
-
-.botaoTeclado:hover { background-color: #0d6efd; }
-.acertou { background-color: #4CAF50 !important; border-color: #4CAF50; }
-.errou { background-color: #f44336 !important; border-color: #f44336; }
+.acertou { background-color: #4CAF50; }
+.errou { background-color: #f44336; }
 
 .botao {
   margin-top: 20px;
