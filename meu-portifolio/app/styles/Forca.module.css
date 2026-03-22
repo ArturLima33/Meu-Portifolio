@@ -1,15 +1,24 @@
 .container {
   max-width: 600px;
-  margin: 80px auto 0 auto;
+  margin: 40px auto;
   color: #eee;
   text-align: center;
   font-family: Arial, sans-serif;
+  padding: 0 15px;
 }
 
 .palavra {
   font-size: 2rem;
   letter-spacing: 0.3em;
   margin-bottom: 20px;
+  word-break: break-all;
+}
+
+@media (max-width: 480px) {
+  .palavra {
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+  }
 }
 
 .caixinhaLetra {
@@ -27,6 +36,7 @@
 .aviso {
   color: #ffdd57;
   font-weight: bold;
+  margin: 10px 0;
 }
 
 .vitoria {
@@ -41,20 +51,27 @@
 
 .teclado {
   margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(10, 50px);
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
+  max-width: 100%;
 }
 
 .botaoTeclado {
-  font-size: 1.2rem;
-  padding: 10px;
+  flex: 1 0 40px;
+  max-width: 55px;
+  height: 50px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
   border: 2px solid #ccc;
   color: #eee;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .botaoTeclado:hover {
@@ -62,9 +79,10 @@
 }
 
 .botaoEnter {
-  grid-column: span 3;
-  font-size: 1.2rem;
-  padding: 10px;
+  flex: 2 0 100px;
+  max-width: 150px;
+  height: 50px;
+  font-size: 1rem;
   background-color: transparent;
   border: 2px solid #ccc;
   color: #eee;
@@ -73,11 +91,13 @@
 }
 
 .acertou {
-  background-color: #4CAF50;
+  background-color: #4CAF50 !important;
+  border-color: #4CAF50;
 }
 
 .errou {
-  background-color: #f44336;
+  background-color: #f44336 !important;
+  border-color: #f44336;
 }
 
 .botao {
