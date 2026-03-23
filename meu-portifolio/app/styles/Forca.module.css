@@ -38,23 +38,22 @@
   grid-template-columns: repeat(10, 50px);
   justify-content: center;
   gap: 8px;
-  /* Garante que o ponto de redução seja o topo central */
+ 
   transform-origin: top center; 
 }
 
-/* --- A MÁGICA ESTÁ AQUI --- */
 @media (max-width: 600px) {
   .teclado {
-    transform: scale(0.7); /* Diminui o teclado em 30% no celular */
-    margin-top: 0px;       /* Ajusta o espaço que sobra devido à escala */
-    width: 140%;           /* Compensa o encolhimento para não sair do centro */
+    transform: scale(0.7);
+    margin-top: 0px;
+    width: 140%;
     margin-left: -20%;
   }
 }
 
 @media (max-width: 400px) {
   .teclado {
-    transform: scale(0.6); /* Diminui um pouco mais em celulares bem pequenos */
+    transform: scale(0.6);
   }
 }
 
